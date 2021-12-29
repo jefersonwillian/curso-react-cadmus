@@ -1,18 +1,16 @@
 import Menu from '../../components/menu/index'
+import LayoutBase from '../../components/layout-base/index'
 
 function About() {
-  const title = "Nós somos ágeis, digitais e humanos";
-  const descrition =
-    "Transformamos ideias em potência com propósito de impactar a sociedade. ";
   return (
-    <div className="container">
-      {Menu()}
-      <div className="title">
-        <h1>{title}</h1>
-      </div>
-      <div className="descrition">
-        <p>{descrition}</p>
-      </div>
+    <div>
+      <>
+        <Menu />
+        <LayoutBase
+          title="Nós somos ágeis, digitais e humanos"
+          descrition="Transformamos ideias em potência com propósito de impactar a sociedade."
+        />
+      </>
     </div>
   );
 }

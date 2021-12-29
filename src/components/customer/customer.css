@@ -1,0 +1,20 @@
+.customer {
+  margin: 0 1rem;
+  width: 100%;
+  text-align: center;
+  background: #35d32f;
+  padding: 1rem;
+  border-radius: 15px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.customer__name {
+  color: #202024;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}

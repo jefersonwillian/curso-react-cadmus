@@ -18,3 +18,20 @@
   text-align: justify;
   color: #fff;
 }
+
+.customer-component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  max-width: 100%;
+  min-width: 50%;
+}
+
+.customer-component__name {
+  padding: 4rem 0 0rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
