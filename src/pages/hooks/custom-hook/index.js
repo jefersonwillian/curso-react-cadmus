@@ -1,22 +1,27 @@
-import Menu from "../../../components/menu/index";
-import { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { createContext, useContext, useState } from "react";
+import "./custom-hook.css";
 
-function CustomHook() {
-  const navigate = useNavigate();
-  const irparaHome = () => {
-    navigate("/");
-  };
+const LoadingContext = createContext({});
+
+const LoadingProvider = (props) => {
+  const { children } = props;
+  const [isLoading, setLoading] = useState(false);
+
   return (
-    <>
-      <Menu />
-      <>
-        <div className="container">
-          <button onClick={irparaHome}>Ir para CustomHook</button>
+    <LoadingContext.Provider value={{ setLoading }}>
+      {isLoading && (
+        <div className="loading">
+          <h3>Carregando . . .</h3>
         </div>
-      </>
-    </>
+      )}
+      {children}
+    </LoadingContext.Provider>
   );
-}
+};
 
-export default CustomHook;
+const useLoading = () => {
+  const context = useContext(LoadingContext);
+  return context;
+};
+
+export { LoadingProvider, useLoading };

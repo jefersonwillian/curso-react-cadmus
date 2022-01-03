@@ -1,7 +1,10 @@
 import Menu from "../../components/menu/index";
 import LayoutBase from "../../components/layout-base/index";
-import Customer from '../../components/customer/index';
-import CardComponent from '../../components/card-component/index'
+import Customer from "../../components/customer/index";
+import CardComponent from "../../components/card-component/index";
+import { useLoading } from "../hooks/custom-hook";
+import { useCallback, useEffect, useState } from "react";
+
 function Home() {
   const customers = [
     {
@@ -44,6 +47,26 @@ function Home() {
       text: "In nulla felis, pellentesque vel tincidunt eu, tristique tristique purus. Suspendisse blandit nunc eros, non imperdiet urna eleifend in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla facilisi. Fusce eros felis, elementum ut ultricies suscipit, egestas sit amet nunc. Curabitur rutrum porttitor metus ut cursus. Aliquam non nunc fermentum, efficitur mi id, convallis tortor.",
     },
   ];
+
+  const { setLoading } = useLoading();
+
+  const mostraLoading = () => {
+    setLoading(true);
+
+    let el = document.querySelector("body");
+    el.style.overflow = "hidden";
+
+    setTimeout(() => {
+      setLoading(false);
+      el.style.overflow = "auto";
+    }, 3000);
+  };
+
+  // useEffect
+  useEffect(() => {
+    mostraLoading();
+  }, []);
+
   return (
     <>
       <>
