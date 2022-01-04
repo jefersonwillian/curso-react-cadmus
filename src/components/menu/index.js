@@ -62,6 +62,7 @@ function Menu() {
           </MenuItem>
         </MenuMuia>
         <Link to="/desafio04">Desafio 04</Link>
+        <Link to="/formReact">Form React</Link>
       </div>
     </div>
   );
