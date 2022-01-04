@@ -58,7 +58,7 @@ function Menu() {
             <LinkJeff to="/hooks-terceiros">Hooks Terceiros</LinkJeff>
           </MenuItem>
           <MenuItem>
-            <LinkJeff to="/custom-hook">Custom Hook</LinkJeff>
+            <LinkJeff to="/">Custom Hook</LinkJeff>
           </MenuItem>
         </MenuMuia>
         <Link to="/desafio04">Desafio 04</Link>
