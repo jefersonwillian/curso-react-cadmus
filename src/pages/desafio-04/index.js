@@ -8,8 +8,8 @@ function Desafio04() {
   const addTodo = () => {
     const newList = [...todoList];
     newList.push(todo);
-      setTodosList(newList);
-      setTodo('')
+    setTodosList(newList);
+    setTodo("");
   };
 
   const removeTodo = (index) => {
