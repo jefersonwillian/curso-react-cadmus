@@ -3,7 +3,8 @@ import LayoutBase from "../../components/layout-base/index";
 import Customer from "../../components/customer/index";
 import CardComponent from "../../components/card-component/index";
 import { useLoading } from "../hooks/custom-hook";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
+import { colorContext } from '../contexts/colorContext'
 
 function Home() {
   const customers = [
@@ -67,6 +68,8 @@ function Home() {
     mostraLoading();
   }, []);
 
+
+  const { color, setColor } = useContext(colorContext);
   return (
     <>
       <>
@@ -78,6 +81,10 @@ function Home() {
       </>
       <div className="customer-component__name">
         <h1>NOSSOS CLIENTES</h1>
+
+        <h1>
+          Alterar cor: <input value={color} onChange={e => setColor(e.target.value)}></input>
+        </h1>
       </div>
       <div className="customer-component">
         {customers.map((res, i) => (
